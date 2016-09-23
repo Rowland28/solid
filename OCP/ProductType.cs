@@ -1,8 +1,8 @@
 ﻿namespace BreakingOpenClosedPrinciple
 {
-    public enum ProductType
-    {
-        Standard,
-        Featured
-    }
+//    public enum ProductType
+//    {
+//        Standard,
+//        Featured
+//    }
 }

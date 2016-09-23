@@ -10,10 +10,12 @@ namespace BreakingSingleResponsibility
             {
                 //Code to save the customer record to the database goes here.
             }
+
             catch (Exception ex)
             {
-                System.IO.File.WriteAllText(@"C:\Error.txt", ex.ToString());
+                new Logger().LoggerEx(ex);
             }
+           
         }
     }
 

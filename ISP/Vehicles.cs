@@ -1,6 +1,6 @@
 namespace BreakingInterfaceSegregationPrinciple
 {
-    public class LuxuryCar : IVehicle
+    public class LuxuryCar : IVehicle, Radio, Sunroof
     {
         private bool _radioOn;
 
@@ -49,28 +49,28 @@ namespace BreakingInterfaceSegregationPrinciple
             //change to selected gear...remember that bikes have a sequential gear box!
         }
 
-        public void TurnOnRadio()
-        {
-            throw new System.NotSupportedException("I don't have a radio - I'm a motorcycle!");
-        }
+        //public void TurnOnRadio()
+        //{
+        //    throw new System.NotSupportedException("I don't have a radio - I'm a motorcycle!");
+        //}
 
-        public void TurnOffRadio()
-        {
-            throw new System.NotSupportedException("I don't have a radio - I'm a motorcycle!");
-        }
+        //public void TurnOffRadio()
+        //{
+        //    throw new System.NotSupportedException("I don't have a radio - I'm a motorcycle!");
+        //}
 
-        public void OpenSunRoof(int percentOpen)
-        {
-            throw new System.NotSupportedException("I don't have a Sunroof - I'm a motorcycle!");
-        }
+        //public void OpenSunRoof(int percentOpen)
+        //{
+        //    throw new System.NotSupportedException("I don't have a Sunroof - I'm a motorcycle!");
+        //}
 
-        public void CloseSunRoof()
-        {
-            throw new System.NotSupportedException("I don't have a Sunroof - I'm a motorcycle!");
-        }
+        //public void CloseSunRoof()
+        //{
+        //    throw new System.NotSupportedException("I don't have a Sunroof - I'm a motorcycle!");
+        //}
     }
 
-    public class BudgetCar : IVehicle
+    public class BudgetCar : IVehicle, Radio
     {
         private bool _radioOn;
 
@@ -98,14 +98,14 @@ namespace BreakingInterfaceSegregationPrinciple
             _radioOn = false;
         }
 
-        public void OpenSunRoof(int percentOpen)
-        {
-            throw new System.NotSupportedException("I don't have a Sunroof - It was an optional extra and you didn't shell out for it!");
-        }
+        //public void OpenSunRoof(int percentOpen)
+        //{
+        //    throw new System.NotSupportedException("I don't have a Sunroof - It was an optional extra and you didn't shell out for it!");
+        //}
 
-        public void CloseSunRoof()
-        {
-            throw new System.NotSupportedException("I don't have a Sunroof - It was an optional extra and you didn't shell out for it!");
-        }
+        //public void CloseSunRoof()
+        //{
+        //    throw new System.NotSupportedException("I don't have a Sunroof - It was an optional extra and you didn't shell out for it!");
+        //}
     }
 }

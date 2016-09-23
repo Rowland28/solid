@@ -2,9 +2,17 @@
 
 namespace BreakingDependencyInversionPrinciple
 {
-    public class Customer
+    public interface Logger
+        {
+        void Log(Exception ex);
+}
+public class Customer
     {
-        ExceptionLogger _exceptionLogger = new ExceptionLogger();
+        private Logger _exceptionLogger;
+        public Customer(Logger exceptionLogger)
+        {
+            _exceptionLogger = exceptionLogger;
+        }
 
         public void Add()
         {
@@ -19,7 +27,7 @@ namespace BreakingDependencyInversionPrinciple
         }
     }
 
-    public class ExceptionLogger
+    public class ExceptionLogger : Logger
     {
         public void Log(Exception ex)
         {
